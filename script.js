@@ -5,6 +5,7 @@ let select = document.querySelector("#select");
 let elResalt = document.querySelector(".resalt");
 let btn = document.querySelector(".btn");
 let elBtn = document.querySelector(".btn");
+let elError = document.querySelector(".resalt-error");
 
 let valueArr = [];
 let resalt;
@@ -31,10 +32,11 @@ function renderArr() {
 
         let elRow = document.createElement("div");
         elRow.setAttribute("class", `rows row-${i}`);
-        elRow.style = `width:${number*60 + number*4}px`;
-        select.style = `width:${number*60 + number*4}px`;
-        elBtn.style = `width:${number*60 + number*4}px`;
-        elResalt.style = `width:${number*60 + number*4}px`;
+        elRow.style = `width:${number*65 + number*4}px`;
+        select.style = `width:${number*65 + number*4}px`;
+        elBtn.style = `width:${number*65 + number*4}px`;
+        elResalt.style = `width:${number*65 + number*4}px`;
+        elError.style = `width:${number*65 + number*4}px`;
 
         for (let j = 1; j <= number; j++) {
 
@@ -42,6 +44,7 @@ function renderArr() {
             elCol.setAttribute("class", `cols col-${j}`);
             elCol.setAttribute("placeholder", `a${i}${j}`);
             elCol.setAttribute("data-place", `a${i}${j}`);
+            elCol.setAttribute("type", "number");
             elRow.append(elCol);
 
         };
@@ -90,10 +93,11 @@ function resaltFun() {
         } else if (number == 4) {
             resalt = fourDeterminant(valueArr);
         }
-        console.log(resalt);
+        // console.log(resalt);
 
-        elResalt.innerHTML = `Resalt: ${resalt}`;
-
+        if (valueArr.length = number * number) {
+            elResalt.innerHTML = `Resalt: ${resalt}`;
+        }
 
     });
 
