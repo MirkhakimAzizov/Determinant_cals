@@ -34,7 +34,7 @@
 
 .cols {
     padding: 10px;
-    padding-right: 0;
+    /* padding-right: 0; */
     margin: 2px;
     width: 65px;
     height: 60px;
